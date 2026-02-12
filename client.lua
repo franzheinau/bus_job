@@ -3,7 +3,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local routeData, currentRouteKey, busVeh, stopIndex = nil, nil, nil, 1
 
--- Pastikan function StartRoute didefinisikan dulu
+
 function StartRoute(routeKey)
     routeData = Config.Routes[routeKey]
     currentRouteKey = routeKey
@@ -105,7 +105,7 @@ function GoToReturnPoint()
             local playerPed = PlayerPedId()
             local coords = GetEntityCoords(playerPed)
 
-            -- Panah besar kuning di lokasi pengembalian
+            
             DrawMarker(36, returnCoords.x, returnCoords.y, returnCoords.z + 1.5, 0, 0, 0, 0, 0, 0, 3.5, 3.5, 3.5, 0, 255, 0, 200, false, true, 2, false, nil, nil, false)
 
             if #(coords - returnCoords) < 3.5 then
@@ -164,3 +164,4 @@ function DrawText3D(coords, text)
     AddTextComponentString(text)
     DrawText(_x, _y)
 end
+
